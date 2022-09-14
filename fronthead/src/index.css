@@ -1,3 +1,28 @@
 main {
     min-height: 85vh;
 }
+
+.rating i {
+    color: rgb(238, 174, 55);
+}
+
+img {
+    overflow: hidden !important;
+}
+
+.cartImg {
+    width: 80%;
+    height: 80%;
+}
+.placeOrderImg {
+    width: 60%;
+    height: 80%;
+}
+
+h1 {
+    font-size: 1.4 rem;
+    padding: 0.1 rem;
+}
+ul {
+    list-style-type: none;
+}

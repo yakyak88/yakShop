@@ -1,15 +1,26 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../actions/userActions";
 
 const Header = () => {
+    const dispatch = useDispatch();
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin;
+    const navigate = useNavigate();
+    const logoutHandler = () => {
+        dispatch(logout());
+        navigate("/login");
+    };
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container-fluid">
+                    <Link className="navbar-brand" to={"/"}>
                         Yak_Shop
-                    </a>
+                    </Link>
                     <button
-                        class="navbar-toggler"
+                        className="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarColor01"
@@ -17,24 +28,62 @@ const Header = () => {
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
-                        <span class="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarColor01">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
+                    <div
+                        className="collapse navbar-collapse"
+                        id="navbarColor01"
+                    >
+                        <ul className="navbar-nav ms-auto">
+                            <li className="nav-item">
+                                <Link className="nav-link" to={"/cart"}>
                                     <i className="fas fa-shopping-cart"></i>{" "}
                                     Cart
-                                </a>
+                                </Link>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i className="fas fa-user"></i> Sign In
-                                </a>
-                            </li>
+                            {userInfo ? (
+                                <div className="dropdown">
+                                    <button
+                                        className="btn btn-dark dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        {userInfo.name}
+                                    </button>
+                                    <ul
+                                        className="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton1"
+                                    >
+                                        <Link
+                                            to={"/profile"}
+                                            className="dropdown-item"
+                                        >
+                                            <li>
+                                                <a>Profile</a>
+                                            </li>
+                                        </Link>
+                                        <li>
+                                            <a
+                                                className="dropdown-item"
+                                                onClick={logoutHandler}
+                                            >
+                                                Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            ) : (
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/login"}>
+                                        <i className="fas fa-user"></i> Sign In
+                                    </Link>
+                                </li>
+                            )}
                         </ul>
-                        <form class="d-flex"></form>
+                        <form className="d-flex"></form>
                     </div>
                 </div>
             </nav>
