@@ -14,7 +14,7 @@ const Header = () => {
     };
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to={"/"}>
                         Yak_Shop
@@ -57,14 +57,15 @@ const Header = () => {
                                         className="dropdown-menu"
                                         aria-labelledby="dropdownMenuButton1"
                                     >
-                                        <Link
-                                            to={"/profile"}
-                                            className="dropdown-item"
-                                        >
-                                            <li>
-                                                <a>Profile</a>
-                                            </li>
-                                        </Link>
+                                        <li>
+                                            <Link
+                                                to={"/profile"}
+                                                className="dropdown-item"
+                                            >
+                                                <span>Profile</span>
+                                            </Link>
+                                        </li>
+
                                         <li>
                                             <a
                                                 className="dropdown-item"

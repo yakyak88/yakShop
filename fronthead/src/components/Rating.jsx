@@ -50,7 +50,7 @@ const rating = ({ value, reviews }) => {
                                 : "far fa-star"
                         }
                     ></i>
-                    <span> {`${reviews} reviews`}</span>
+                    <p> {`${reviews} reviews`}</p>
                 </>
             }
         </div>

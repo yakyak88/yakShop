@@ -23,6 +23,9 @@ function CartScreen() {
     const checkoutHandler = () => {
         navigate("/shipping");
     };
+    const homeScreenHandler = () => {
+        navigate("/");
+    };
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCart(id));
     };
@@ -114,7 +117,13 @@ function CartScreen() {
                         </li>
                     </ul>
                     <ul className="list-group">
-                        {" "}
+                        <button
+                            className="btn-block btn-lg btn btn-success mt-2"
+                            onClick={homeScreenHandler}
+                        >
+                            continue Shopping{" "}
+                        </button>
+
                         <button
                             className="btn-block btn-lg btn btn-dark mt-2"
                             onClick={checkoutHandler}

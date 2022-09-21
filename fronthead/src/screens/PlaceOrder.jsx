@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { Link } from "react-router-dom";
 import { createdOrder } from "../actions/orderActions";
+import { clearCart } from "../actions/cartActions";
 
 function PlaceOrder() {
     const cart = useSelector((state) => state.cart);
@@ -26,6 +27,7 @@ function PlaceOrder() {
     useEffect(() => {
         if (success) {
             navigate("/order/" + order._id);
+            dispatch(clearCart());
         }
         // eslint-disable-next-line
     }, [success, navigate]);
@@ -159,8 +161,8 @@ function PlaceOrder() {
                                     <div className="col-md-6">
                                         <span className="fs-5">Total</span>
                                     </div>
-                                    <div className="col-md-6">
-                                        <span className="fs-5">
+                                    <div className="col-md-6 ">
+                                        <span className="fs-5 ">
                                             {cart.totalPrice}$
                                         </span>
                                     </div>

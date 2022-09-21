@@ -18,6 +18,10 @@ img {
     width: 60%;
     height: 80%;
 }
+.orderScreenImg {
+    width: 20%;
+    height: 100%;
+}
 
 h1 {
     font-size: 1.4 rem;
@@ -25,4 +29,7 @@ h1 {
 }
 ul {
     list-style-type: none;
+}
+body {
+    background-color: white;
 }

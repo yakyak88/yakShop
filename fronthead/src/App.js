@@ -10,13 +10,24 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrder from "./screens/PlaceOrder";
-
+import OrderScreen from "./screens/OrderScreen";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { login } from "./actions/userActions";
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (localStorage.getItem("userInfo")) {
+            dispatch(login());
+        }
+        return () => {};
+    }, []);
     return (
         <Router>
             <div className="App">
                 <Header></Header>
-                <main className="py-3">
+                <main className="pb-3">
                     <div className="container"></div>
                     <Routes>
                         <Route
@@ -43,6 +54,11 @@ function App() {
                             path="/placeorder"
                             element={<PlaceOrder></PlaceOrder>}
                         />
+                        <Route
+                            path="/order/:id"
+                            element={<OrderScreen></OrderScreen>}
+                        />
+
                         <Route
                             path="/product/:id"
                             element={<ProductScreen />}

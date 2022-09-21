@@ -7,8 +7,10 @@ const orderSchema = mongoose.Schema(
             required: true,
             ref: "User",
         },
-        order: [
+        orderItems: [
+            // array of objects with the following properties (see frontend\src\components\CartScreen.js):
             {
+                // name, qty, image, price, product, countInStock
                 name: { type: String, required: true },
                 qty: { type: Number, required: true },
                 image: { type: String, required: true },
@@ -18,8 +20,9 @@ const orderSchema = mongoose.Schema(
                     required: true,
                     ref: "Product",
                 },
-            },
-        ],
+            }, // end of object
+        ], // end of array
+
         shippingAddress: {
             address: { type: String, required: true },
             city: { type: String, required: true },
@@ -40,6 +43,11 @@ const orderSchema = mongoose.Schema(
             status: { type: String },
             update_time: { type: String },
             email_address: { type: String },
+        },
+        itemsPrice: {
+            type: Number,
+            required: true,
+            default: 0.0,
         },
         taxPrice: {
             type: Number,

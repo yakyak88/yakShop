@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
+import Carousel from "../components/Carousel";
+import BannerVid from "../components/BannerVid";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -14,19 +16,25 @@ const HomeScreen = () => {
     }, [dispatch]);
 
     return (
-        <div className="container">
-            {loading ? (
-                <Loader></Loader>
-            ) : error ? (
-                <h3>{error}</h3>
-            ) : (
-                <div className="row row-cols-4 ">
-                    {products.map((product) => (
-                        <Product key={product._id} product={product}></Product>
-                    ))}
-                </div>
-            )}
-        </div>
+        <>
+            <Carousel className="mb-4" product={products}></Carousel>
+            <div className="container">
+                {loading ? (
+                    <Loader></Loader>
+                ) : error ? (
+                    <h3>{error}</h3>
+                ) : (
+                    <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mt- ">
+                        {products.map((product) => (
+                            <Product
+                                key={product._id}
+                                product={product}
+                            ></Product>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </>
     );
 };
 
