@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
-import Carousel from "../components/Carousel";
-import BannerVid from "../components/BannerVid";
+
+import BannerIMG from "../components/BannerIMG";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const HomeScreen = () => {
 
     return (
         <>
-            <Carousel className="mb-4" product={products}></Carousel>
+            <BannerIMG className="mb-4"></BannerIMG>
             <div className="container">
                 {loading ? (
                     <Loader></Loader>

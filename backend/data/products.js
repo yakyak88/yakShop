@@ -48,17 +48,18 @@ const products = [
         numReviews: 12,
     },
     {
-        name: "Logitech G-Series Gaming Mouse",
-        image: "/images/mouse.jpg",
+        name: "Apple Watch Series 4",
+        image: "/images/watch.jpg",
         description:
             "Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience",
-        brand: "Logitech",
+        brand: "Apple",
         category: "Electronics",
-        price: 49.99,
+        price: 299.99,
         countInStock: 7,
         rating: 3.5,
         numReviews: 10,
     },
+
     {
         name: "Amazon Echo Dot 3rd Generation",
         image: "/images/alexa.jpg",
@@ -72,20 +73,20 @@ const products = [
         numReviews: 12,
     },
     {
-        name: "Airpods Bluetooth Headphones",
-        image: "/images/airpods.jpg",
+        name: "iPad Pro 12.9 inch 64GB",
+        image: "/images/tablet.jpg",
         description:
             "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
         brand: "Apple",
         category: "Electronics",
-        price: 89.99,
+        price: 289.99,
         countInStock: 10,
         rating: 4.5,
         numReviews: 12,
     },
     {
-        name: "iPhone 11 Pro 256GB Memory",
-        image: "/images/phone.jpg",
+        name: "iPhone 10 Pro 256GB Memory",
+        image: "/images/iphone.jpg",
         description:
             "Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life",
         brand: "Apple",
