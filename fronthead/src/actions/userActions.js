@@ -27,7 +27,7 @@ export const login = (email, password) => async (dispatch) => {
             },
         };
         const { data } = await axios.post(
-            "process.env.API_URL/api/users/login",
+            `${process.env.API_URL}/api/users/login`,
             { password, email },
             config
         );
@@ -56,7 +56,7 @@ export const register = (name, email, password) => async (dispatch) => {
         dispatch({ type: USER_REGISTER_REQUEST });
         const config = { headers: { "Content-Type": "application/json" } };
         const { data } = await axios.post(
-            "process.env.API_URL/api/users",
+            `${process.env.API_URL}/api/users`,
             { name, password, email },
             config
         );
@@ -93,7 +93,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         };
 
         const { data } = await axios.get(
-            `process.env.API_URL/api/users/${id}`,
+            `${process.env.API_URL}/api/users/${id}`,
             config
         );
 
@@ -124,7 +124,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         };
 
         const { data } = await axios.put(
-            `process.env.API_URL/api/users/profile`,
+            `${process.env.API_URL}/api/users/profile`,
             user,
             config
         );

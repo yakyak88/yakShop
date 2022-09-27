@@ -11,7 +11,7 @@ import {
 export const listProducts = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });
-        const { data } = await axios.get("process.env.API_URL/api/products");
+        const { data } = await axios.get(`${process.env.API_URL}/api/products`);
         dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
     } catch (error) {
         dispatch({
@@ -28,7 +28,7 @@ export const getProductByID = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_REQUEST });
         const { data } = await axios.get(
-            `process.env.API_URL/api/products/${id}`
+            `${process.env.API_URL}/api/products/${id}`
         );
         dispatch({ type: PRODUCT_SUCCESS, payload: data });
     } catch (error) {
