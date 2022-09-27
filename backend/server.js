@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import { notFound, errorHandler } from "./middleWare/errorMiddleWare.js";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import OrderRoutes from "./routes/OrderRoutes.js";
