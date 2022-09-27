@@ -18,8 +18,10 @@ app.use(cors());
 app.use("/api/products", ProductRoutes);
 app.use("/api/users", UsersRoutes);
 app.use("/api/orders", OrderRoutes);
+
 //app.use(notFound);
 //app.use(errorHandler);
+
 const __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/fronthead/build")));
