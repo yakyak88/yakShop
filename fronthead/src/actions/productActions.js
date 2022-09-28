@@ -8,6 +8,9 @@ import {
     PRODUCT_SUCCESS,
 } from "../constants/constants";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 export const listProducts = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });

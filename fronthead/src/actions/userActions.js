@@ -1,4 +1,5 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
 import {
     USER_DETAILS_FAIL,
@@ -16,6 +17,7 @@ import {
     USER_UPDATE_PROFILE_SUCCESS,
 } from "../constants/usersConstants";
 
+dotenv.config();
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({ type: USER_LOGIN_REQUEST });
