@@ -12,7 +12,7 @@ const HomeScreen = () => {
     console.log(process.env.REACT_APP_REACT_APP_API_URL);
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.productList);
-    const { loading, error, products } = productList;
+    const { loading, error, products } = [{id:1},{id:2},{id:3}];
     console.log(`products are: ${products}`);
     useEffect(() => {
         dispatch(listProducts());
