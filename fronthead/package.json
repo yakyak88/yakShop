@@ -1,6 +1,6 @@
 {
     "name": "fronthead",
-    "proxy": "http://localhost:5001",
+    "proxy": "https://or-shop.herokuapp.com/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
