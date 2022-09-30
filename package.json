@@ -11,9 +11,7 @@
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "data:import": "node backend/seeder",
         "data:destroy": "node backend/seeder -d",
-        "webpack": "webpack",
-        "heroku-postbuild": "npm run webpack"
-        
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix fronthead && npm run build --prefix fronthead"
     },
     "author": "Yakir Daniel",
     "license": "ISC",
