@@ -8,6 +8,8 @@ import Loader from "../components/Loader";
 import BannerIMG from "../components/BannerIMG";
 
 const HomeScreen = () => {
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.REACT_APP_REACT_APP_API_URL);
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.productList);
     const { loading, error, products } = productList;
