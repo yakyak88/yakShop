@@ -25,7 +25,7 @@ export const createdOrder = (order) => async (dispatch, getState) => {
             },
         };
         const { data } = await axios.post(
-            `${process.env.REACT_APP_API_URL}/api/orders`,
+            `api/orders`,
             order,
             config
         );
@@ -56,7 +56,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
             },
         };
         const { data } = await axios.get(
-            `${process.env.REACT_APP_API_URL}/api/orders/${id}`,
+            `api/orders/${id}`,
             config
         );
         dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });

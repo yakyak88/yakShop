@@ -28,7 +28,7 @@ export const getProductByID = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_REQUEST });
         const { data } = await axios.get(
-            `${process.env.REACT_APP_API_URL}/api/products/${id}`
+            `api/products/${id}`
         );
         dispatch({ type: PRODUCT_SUCCESS, payload: data });
     } catch (error) {
