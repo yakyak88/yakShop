@@ -14,6 +14,7 @@ import OrderScreen from "./screens/OrderScreen";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { login } from "./actions/userActions";
+import TestScreen from "./screens/TestScreen";
 function App() {
     const dispatch = useDispatch();
 
@@ -49,6 +50,10 @@ function App() {
                         <Route
                             path="/payment"
                             element={<PaymentScreen></PaymentScreen>}
+                        />
+                        <Route
+                            path="/test"
+                            element={<TestScreen></TestScreen>}
                         />
                         <Route
                             path="/placeorder"
